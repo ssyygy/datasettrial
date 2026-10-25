@@ -1,0 +1,149 @@
+{
+  "semantic": {
+    "genre_clap": {
+      "type": "multiclass",
+      "role": "validation",
+      "templates": [
+        "{} music",
+        "this is a {} song",
+        "a {} track"
+      ],
+      "labels": {
+        "rock": "rock",
+        "pop": "pop",
+        "hip_hop": "hip hop rap",
+        "electronic": "electronic dance",
+        "jazz": "jazz",
+        "classical": "classical orchestral",
+        "metal": "heavy metal",
+        "rnb_soul": "r&b soul",
+        "country": "country",
+        "reggae": "reggae",
+        "ambient": "ambient",
+        "latin": "latin"
+      }
+    },
+    "mood": {
+      "type": "multiclass",
+      "role": "feature",
+      "templates": [
+        "{} music",
+        "a {} song",
+        "this song sounds {}"
+      ],
+      "labels": {
+        "energetic": "energetic and powerful",
+        "calm": "calm and peaceful",
+        "happy": "happy and cheerful",
+        "sad": "sad and melancholic",
+        "aggressive": "aggressive and angry",
+        "romantic": "romantic and tender",
+        "dreamy": "dreamy and ethereal",
+        "dark": "dark and ominous"
+      }
+    },
+    "context": {
+      "type": "multiclass",
+      "role": "feature",
+      "templates": [
+        "music for {}",
+        "a song perfect for {}",
+        "a playlist for {}"
+      ],
+      "labels": {
+        "workout": "a workout at the gym",
+        "party": "a dance party",
+        "focus_work": "focusing on work or studying",
+        "relaxation": "relaxing after a long day",
+        "sleep": "falling asleep",
+        "road_trip": "a road trip in the car",
+        "romantic_evening": "a romantic dinner"
+      }
+    },
+    "atmosphere": {
+      "type": "multiclass",
+      "role": "feature",
+      "templates": [
+        "music with an {} atmosphere",
+        "a song that feels {}"
+      ],
+      "labels": {
+        "epic": "epic and cinematic",
+        "intimate": "intimate and personal",
+        "groovy": "groovy and funky",
+        "mysterious": "mysterious and hypnotic",
+        "nostalgic": "nostalgic and retro",
+        "festive": "festive and celebratory"
+      }
+    },
+    "instrument": {
+      "type": "binary",
+      "role": "feature",
+      "labels": {
+        "electric_guitar": [
+          "music with loud electric guitar",
+          "music without electric guitar"
+        ],
+        "acoustic_guitar": [
+          "music with acoustic guitar",
+          "music without acoustic guitar"
+        ],
+        "piano": [
+          "music with piano",
+          "music without piano"
+        ],
+        "synthesizer": [
+          "music with synthesizers",
+          "music without synthesizers"
+        ],
+        "strings": [
+          "music with orchestral strings, violins and cellos",
+          "music without string instruments"
+        ],
+        "brass_sax": [
+          "music with brass instruments or saxophone",
+          "music without brass or saxophone"
+        ],
+        "drums": [
+          "music with a prominent drum beat",
+          "music without drums"
+        ]
+      }
+    },
+    "vocals": {
+      "type": "binary",
+      "role": "feature",
+      "labels": {
+        "vocals": [
+          "a song with a singer singing vocals",
+          "instrumental music without vocals"
+        ]
+      }
+    }
+  },
+  "signal": {
+    "tempo_bpm": "темп, BPM",
+    "rms_mean": "средняя громкость",
+    "rms_dynamic_range_db": "динамический диапазон, дБ",
+    "spectral_centroid_hz": "яркость (спектральный центроид), Гц",
+    "spectral_flatness": "шумность спектра",
+    "onset_rate": "атак в секунду",
+    "pulse_clarity": "выраженность ритма (0..1)",
+    "percussive_ratio": "доля энергии ударных",
+    "zcr_mean": "zero crossing rate",
+    "mode_major": "мажор (1) / минор (0)",
+    "key_strength": "уверенность в тональности"
+  },
+  "meta": {
+    "genre": "жанр (эталон)",
+    "year": "год",
+    "decade": "десятилетие",
+    "era": "эпоха",
+    "duration_sec": "длительность",
+    "log_views": "log10 просмотров",
+    "is_topic_channel": "официальный канал лейбла"
+  },
+  "embedding": {
+    "clap_audio": "laion/larger_clap_music, 512"
+  }
+}
